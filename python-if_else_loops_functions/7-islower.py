@@ -1,6 +1,6 @@
 #!/usr/bin/pyhton3
 def islower(c):
-    if ord(c) in range(ord('a'), ord('z')+1):
+    if (97 <= ord(c) <= 122):
         return True
     else:
         return False
