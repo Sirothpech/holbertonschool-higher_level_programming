@@ -6,4 +6,3 @@ def print_matrix_integer(matrix=[[]]):
             if i < len(row) - 1:
                 print(' ', end= '')
         print()
-    return matrix
