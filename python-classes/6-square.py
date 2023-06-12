@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-"""Write an empty class Square that defines a square:"""
+"""Module containing the Square class."""
 
 
 class Square:
     """This class represents a square.
-    Args:
-        size: private attribute
+
+    Attributes:
+        size (int): The size of the square.
+        position (tuple): The position of the square.
+
     """
     __size = 0
     __position = 0
@@ -20,12 +23,11 @@ class Square:
 
     @size.setter
     def size(self, value):
-        self.__size = value
         if type(value) is not int:
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
-        pass
+        self.__size = value
 
     @property
     def position(self):
@@ -36,10 +38,7 @@ class Square:
 
         if type(value) is not tuple or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
-        if not all(type(coord) is int and coord >= 0 for coord in value):
-            raise ValueError("position must be a tuple of 2 positive integers")
         self.__position = value
-        pass
 
     def area(self):
         """Calculate and return the area of the square."""
