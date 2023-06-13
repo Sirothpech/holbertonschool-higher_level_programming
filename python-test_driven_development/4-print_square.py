@@ -4,6 +4,7 @@ Function that prints square with the character #.
 
 """
 
+
 def print_square(size):
     """
     Function that prints square with the character #.
