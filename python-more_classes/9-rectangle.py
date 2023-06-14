@@ -25,16 +25,17 @@ class Rectangle:
         Rectangle.number_of_instances += 1
 
     def __str__(self):
-        """Return a string representation of the rectangle."""
+        rectangle_str = ""
         if self.__width == 0 or self.__height == 0:
-            return ""
-        rectangle_str = "#" * self.__width + "\n"
-        rectangle_str *= self.__height - 1
-        rectangle_str += "#" * self.__width
-        return rectangle_str
+            return rectangle_str
+        for i in range(self.__height):
+            for j in range(self.__width):
+                rectangle_str += str(self.print_symbol)
+            rectangle_str += "\n"
+        return rectangle_str[:-1]
 
     def __repr__(self):
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
     def __del__(self):
         Rectangle.number_of_instances -= 1
