@@ -46,20 +46,6 @@ class Rectangle:
         Rectangle.number_of_instances -= 1
 
     @property
-    def height(self):
-        """retrieve the height"""
-        return self.__height
-
-    @height.setter
-    def height(self, value):
-        """set a new value to height"""
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
-        elif value < 0:
-            raise ValueError("height must be >= 0")
-        self.__height = value
-
-    @property
     def width(self):
         """retrieve the width"""
         return self.__width
@@ -72,6 +58,20 @@ class Rectangle:
         elif value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
+
+    @property
+    def height(self):
+        """retrieve the height"""
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        """set a new value to height"""
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        elif value < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = value
 
     def area(self):
         """Calculate and return the area of the rectangle."""
