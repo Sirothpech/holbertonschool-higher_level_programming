@@ -26,6 +26,9 @@ class TestMaxInteger(unittest.TestCase):
     def test_duplicate_numbers(self):
         self.assertEqual(max_integer([5, 5, 5, 5]), 5)
 
+    def test_float_list(self):
+        self.assertEqual(max_integer([1.2, 4.1, 3.6, 2.2]), 4.1)
+
     def test_invalid_argument(self):
         with self.assertRaises(TypeError):
             max_integer([1, 2, 'a', 4])
