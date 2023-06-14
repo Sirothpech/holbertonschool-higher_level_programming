@@ -28,7 +28,7 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_invalid_argument(self):
         with self.assertRaises(TypeError):
-            max_integer([1, 2, 'a', 3, 4])
+            max_integer([1, 2, 'a', 4])
 
 
 if __name__ == "__main__":
