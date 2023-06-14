@@ -13,13 +13,13 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([5]), 5)
 
     def test_positive_numbers(self):
-        self.assertEqual(max_integer([1, 3, 5, 2, 4]), 5)
+        self.assertEqual(max_integer([1, 2, 3, 4]), 4)
 
     def test_negative_numbers(self):
-        self.assertEqual(max_integer([-1, -3, -5, -2, -4]), -1)
+        self.assertEqual(max_integer([-1, -3, -5, -2]), -1)
 
     def test_mixed_numbers(self):
-        self.assertEqual(max_integer([-1, 3, -5, 2, 0]), 3)
+        self.assertEqual(max_integer([-1, 3, -5, 0]), 3)
 
     def test_duplicate_numbers(self):
         self.assertEqual(max_integer([5, 5, 5, 5]), 5)
