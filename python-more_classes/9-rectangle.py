@@ -42,8 +42,8 @@ class Rectangle:
 
     def __del__(self):
         """delete the current Rectangle"""
-        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
 
     @property
     def height(self):
