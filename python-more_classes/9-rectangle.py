@@ -24,6 +24,22 @@ class Rectangle:
         self.__width = width
         Rectangle.number_of_instances += 1
 
+    def __str__(self):
+        """Return a string representation of the rectangle."""
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        rectangle_str = "#" * self.__width + "\n"
+        rectangle_str *= self.__height - 1
+        rectangle_str += "#" * self.__width
+        return rectangle_str
+
+    def __repr__(self):
+        return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __del__(self):
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
+
     @property
     def width(self):
         return self.__width
@@ -71,19 +87,3 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         return cls(size, size)
-
-    def __str__(self):
-        """Return a string representation of the rectangle."""
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        rectangle_str = "#" * self.__width + "\n"
-        rectangle_str *= self.__height - 1
-        rectangle_str += "#" * self.__width
-        return rectangle_str
-
-    def __repr__(self):
-        return "Rectangle({}, {})".format(self.__width, self.__height)
-
-    def __del__(self):
-        Rectangle.number_of_instances -= 1
-        print("Bye rectangle...")
