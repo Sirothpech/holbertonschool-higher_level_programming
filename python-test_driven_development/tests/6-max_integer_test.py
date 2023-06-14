@@ -33,9 +33,9 @@ class TestMaxInteger(unittest.TestCase):
         with self.assertRaises(TypeError):
             max_integer(None)
 
-    def test_invalid_argument(self):
+    def test_non_numeric_elements(self):
         with self.assertRaises(TypeError):
-            max_integer([1, 2, 'a', 4])
+            max_integer([1, 2, 'a', 4, 5])
 
 
 if __name__ == "__main__":
