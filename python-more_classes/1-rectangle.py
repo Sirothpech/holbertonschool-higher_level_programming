@@ -10,9 +10,9 @@ class Rectangle:
     """This class represents a  rectangle."""
     def __init__(self, width=0, height=0):
         if not isinstance(height, int):
-            raise TypeError("width must be an integer")
+            raise TypeError("height must be an integer")
         elif height < 0:
-            raise ValueError("width must be >= 0")
+            raise ValueError("height must be >= 0")
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
         elif width < 0:
