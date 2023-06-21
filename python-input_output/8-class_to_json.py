@@ -12,11 +12,9 @@ def class_to_json(obj):
     data structure (list, dictionary, string, integer and boolean)
     for JSON serialization of an object:
     """
-    if isinstance(obj, bool) or isinstance(obj, int) or isinstance(obj, str):
-        return obj
-    elif isinstance(obj, list):
-        return [class_to_json(item) for item in obj]
-    elif isinstance(obj, dict):
-        return {key: class_to_json(value) for key, value in obj.items()}
-    else:
-        return obj.__dict__
+
+    final_dict = {}
+    for key, value in obj.__dict__.items():
+        if isinstance(value, (list, dict, str, int, bool)):
+            final_dict[key] = value
+    return final_dict
