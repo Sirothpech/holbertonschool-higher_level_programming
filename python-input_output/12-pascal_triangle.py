@@ -5,6 +5,9 @@ Representing the Pascal triangle of n
 
 
 def pascal_triangle(n):
+    """
+    Representing the Pascal triangle of n
+    """
     if n <= 0:
         return []
 
