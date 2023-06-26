@@ -78,16 +78,20 @@ class Rectangle(Base):
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} -\
  {self.width}/{self.height}"
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """that assigns an argument to each attribute:"""
-        for i, arg in enumerate(args):
-            if i == 0:
-                self.id = arg
-            elif i == 1:
-                self.width = arg
-            elif i == 2:
-                self.height = arg
-            elif i == 3:
-                self.x = arg
-            elif i == 4:
-                self.y = arg
+        if args:
+            for i, arg in enumerate(args):
+                if i == 0:
+                    self.id = arg
+                elif i == 1:
+                    self.width = arg
+                elif i == 2:
+                    self.height = arg
+                elif i == 3:
+                    self.x = arg
+                elif i == 4:
+                    self.y = arg
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
