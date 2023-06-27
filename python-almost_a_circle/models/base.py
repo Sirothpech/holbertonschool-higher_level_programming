@@ -3,6 +3,7 @@
 This class will be the “base” of all other classes in this project.
 """
 import json
+import os
 
 
 class Base:
@@ -50,3 +51,17 @@ class Base:
             dummy = cls()
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        filename = cls.__name__ + ".json"
+        if os.path.isfile(filename):
+            with open(filename, 'r') as file:
+                data = file.read()
+                instance_list = cls.from_json_string(data)
+                instances = []
+                for instance in instance_list:
+                    instances.append(cls.create(**instance))
+                return instances
+        else:
+            return []
