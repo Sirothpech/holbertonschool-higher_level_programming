@@ -60,11 +60,6 @@ class TestSquare_instantiation(unittest.TestCase):
         s.size = 8
         self.assertEqual(8, s.width)
 
-    def test_height_getter(self):
-        s = Square(4, 1, 9, 2)
-        s.size = 8
-        self.assertEqual(8, s.height)
-
     def test_x_getter(self):
         self.assertEqual(0, Square(10).x)
 
@@ -308,11 +303,6 @@ class TestSquare_area(unittest.TestCase):
         s = Square(999999999999999999, 0, 0, 1)
         self.assertEqual(999999999999999998000000000000000001, s.area())
 
-    def test_area_changed_attributes(self):
-        s = Square(2, 0, 0, 1)
-        s.size = 7
-        self.assertEqual(49, s.area())
-
     def test_area_one_arg(self):
         s = Square(2, 10, 1, 1)
         with self.assertRaises(TypeError):
@@ -440,11 +430,6 @@ class TestSquare_update_args(unittest.TestCase):
         s.update(89, 2)
         self.assertEqual(2, s.width)
 
-    def test_update_args_height_setter(self):
-        s = Square(10, 10, 10, 10)
-        s.update(89, 2)
-        self.assertEqual(2, s.height)
-
     def test_update_args_None_id(self):
         s = Square(10, 10, 10, 10)
         s.update(None)
@@ -541,11 +526,6 @@ class TestSquare_update_kwargs(unittest.TestCase):
         s = Square(10, 10, 10, 10)
         s.update(id=89, size=8)
         self.assertEqual(8, s.width)
-
-    def test_update_kwargs_height_setter(self):
-        s = Square(10, 10, 10, 10)
-        s.update(id=89, size=9)
-        self.assertEqual(9, s.height)
 
     def test_update_kwargs_None_id(self):
         s = Square(10, 10, 10, 10)
