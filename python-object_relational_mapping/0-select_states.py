@@ -8,6 +8,7 @@ the specified MySQL database.
 import sys
 import MySQLdb
 
+
 def get_all_states(mysql_username, mysql_password, database_name):
     """
     Retrieve and print all states from the database.
@@ -35,6 +36,7 @@ def get_all_states(mysql_username, mysql_password, database_name):
     # Close the cursor and database connection
     cursor.close()
     db.close()
+
 
 if __name__ == "__main__":
     # Extract command-line arguments
