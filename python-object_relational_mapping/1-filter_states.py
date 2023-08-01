@@ -10,7 +10,7 @@ import sys
 import MySQLdb
 
 
-def get_all_states(mysql_username, mysql_password, database_name):
+def filter_states(mysql_username, mysql_password, database_name):
     """
     Retrieve and print all states whose names start with the letter
     'N' from the database.
@@ -29,7 +29,7 @@ def get_all_states(mysql_username, mysql_password, database_name):
     cursor = db.cursor()
 
     # Execute the SQL query
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%'\
+    cursor.execute("SELECT * FROM states WHERE BINARY name LIKE 'N%'\
                        ORDER BY id ASC;")
 
     # Fetch all rows and display the results
@@ -47,4 +47,4 @@ if __name__ == "__main__":
         sys.argv[2], sys.argv[3]
 
     # Call the function to get all states whose names start with 'N'
-    get_all_states(mysql_username, mysql_password, database_name)
+    filter_states(mysql_username, mysql_password, database_name)
