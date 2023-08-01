@@ -15,7 +15,7 @@ def filter_states_by_user_input(mysql_username, mysql_password, database_name,
     cursor = db.cursor()
 
     # Execute the SQL query
-    cursor.execute("SELECT name FROM states WHERE name='{}'\
+    cursor.execute("SELECT * FROM states WHERE BINARY name LIKE '{}'\
         ORDER BY id ASC".format(state_name))
 
     # Fetch all rows and display the results
