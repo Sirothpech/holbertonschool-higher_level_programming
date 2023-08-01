@@ -29,7 +29,7 @@ def get_all_states(mysql_username, mysql_password, database_name):
     cursor = db.cursor()
 
     # Execute the SQL query
-    cursor.execute("SELECT name FROM states WHERE name LIKE 'N%'\
+    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%'\
                        ORDER BY id ASC;")
 
     # Fetch all rows and display the results
